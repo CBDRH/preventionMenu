@@ -1,0 +1,24 @@
+Package: preventionMenu
+Title: Presenting different types of community-wide interventions that may benefit the Norfolk Island community
+Version: 0.0.0.9000
+Authors@R: person('Mark', 'Hanly', email = 'm.hanly@unsw.edu.au', role = c('cre', 'aut'))
+Description: PKG_DESC.
+License: What license is it under?
+Imports: 
+    config (>= 0.3.1),
+    ggplot2 (>= 3.4.0),
+    dplyr (>= 1.0.10),
+    golem (>= 0.3.5),
+    shiny (>= 1.7.4),
+    waffle (>= 0.7.0),
+    tidyr (>= 1.2.1),
+    shinydashboard (>= 0.7.2),
+    shinyWidgets (>= 0.7.6),
+    magrittr,
+    pkgload
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

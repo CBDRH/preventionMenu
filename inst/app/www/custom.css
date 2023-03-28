@@ -1,0 +1,73 @@
+
+.myButton {
+    display: inline-block;
+    width: 49%;
+    height: 200px;
+    white-space: normal;
+    text-align: left;
+    padding: 16px;
+    font-size: 14pt;
+    color: #549F93;
+    background-color: #32322C;
+}
+
+.lightButton {
+    color: #D3D3D3;
+    background-color: white;
+}
+
+.myLightbulb {
+  color: orange;
+}
+
+#header1 {
+
+}
+
+#header2 {
+float: right; !important
+max-height: 70px;
+}
+
+#panel1 {
+  background: #D3D3D3;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  align-content: center;
+  height: 100px;
+  overflow: auto;
+  position: fixed
+}
+
+#panel2 {overflow: auto;}
+
+.Likely {
+  color: #00A65A;
+  margin-left: 10%;
+}
+
+.Possible {
+  color: #03ff70;
+  margin-left: 10%
+}
+
+.Potential {
+  color: #ff851b;
+  margin-left: 10%
+}
+
+.Limited {
+  color: #D3D3D3;
+  margin-left: 10%
+}
+
+.Unlikely {
+  color: #D3D3D3;
+  margin-left: 10%
+}
+
+.Unknown {
+  color: #D3D3D3;
+  margin-left: 10%
+}
