@@ -6,10 +6,6 @@
 #' @noRd
 app_server <- function(input, output, session) {
 
-  # load libraries
-  library(shinydashboard)
-
-
   # Read the raw data
 
  rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Possible', 'Likely')
@@ -79,9 +75,65 @@ app_server <- function(input, output, session) {
   observeEvent(input$AF, {rv$item = 'AF'})
   observeEvent(input$AG, {rv$item = 'AG'})
 
-  output$text <- renderText({
-    menuData$name[menuData$id==rv$item]
+  output$text <- renderUI({
+    h2(icon("lightbulb", style = "color:orange;"), menuData$name[menuData$id==rv$item])
   })
+
+  # Add to shortlist on click
+  observeEvent(input$addShortlist, {
+    current_df <- shortList()
+    row_to_update <- match(rv$item, menuData$id)
+    current_df[row_to_update, "include"] <- 1L
+    shortList(current_df)
+
+    shinyalert::shinyalert(title = "Added to shortlist!",
+                           type = "success",
+                           text = "Click view shortlist to review your shortlist",
+                           timer=1000,
+                           showConfirmButton=TRUE)
+  })
+
+  # Remove from shortlist on click
+  observeEvent(input$removeShortlist, {
+    current_df <- shortList()
+    row_to_update <- match(rv$item, menuData$id)
+    current_df[row_to_update, "include"] <- 0L
+    shortList(current_df)
+
+    shinyalert::shinyalert(title = "Removed from shortlist!",
+                           type = "warning",
+                           text = "Click view shortlist to review your shortlist",
+                           timer=2000,
+                           showConfirmButton=TRUE)
+  })
+
+  # Define shortlist list
+  shortList <- reactiveVal(data.frame(id = 1:nrow(menuData), include = rep(0, nrow(menuData))))
+
+  # Define summary
+  summary <- reactive({
+    menuData[shortList()$id[shortList()$include==1], ] %>%
+      dplyr::select(groupA, brief, support, reco)
+  })
+
+
+  # Display dataframe in table
+  output$table <- DT::renderDataTable({
+    DT::datatable(
+      summary(),
+      colnames = c('Type', 'Description', 'Community support', 'Positive evaluations')
+    )
+  })
+
+
+
+  output$addButton <- renderUI({
+
+    added <- ifelse(shortList()$include[shortList()$id==rv$item]==1L, greenTick, greyTick)
+
+    actionButton("addShortlist", "Add to shortlist", icon = icon("check", class = added))
+  })
+
 
 
   # Update panel
@@ -89,6 +141,9 @@ app_server <- function(input, output, session) {
   observeEvent(input$viewShortlist, {
     updateTabsetPanel(session, "hidden_tabs", selected = "Shortlist")
   })
+
+
+
 
   observeEvent(input$viewDashboard, {
     updateTabsetPanel(session, "hidden_tabs", selected = "Dashboard")
@@ -100,17 +155,31 @@ app_server <- function(input, output, session) {
   # Title
   output$waffleTitle <- renderUI({
     n <- menuData$reco[menuData$id==rv$item]
-    title <- HTML(paste0(h3(span(style="color: #00A65A", n)," out of 71 respondents expressed interest in this initiative")))
+    title <- HTML(paste0(h3(span(style="color: #05668D", n)," out of 71 respondents", span(style="color: #05668D", "expressed interest"), "in this initiative")))
   })
 
   # Plot
   output$waffle <- renderPlot({
     n <- menuData$reco[menuData$id==rv$item]
-    waffle::waffle(c(n, 71-n), rows=3,
-                   colors = c('#00A65A', '#DD4B39')) +
-      ggplot2::theme(legend.position = 'none')
-  })
 
+    df <- data.frame(
+      x = c(seq(1,24), seq(1,24), seq(1,23)),
+      y = c(rep(1,24), rep(2,24), rep(3,23)),
+      interest = c(rep('a', n), rep('b',71-n))
+    )
+
+    ggplot2::ggplot(df, ggplot2::aes(x, y, fill=interest, color=interest)) +
+      ggplot2::geom_tile(color='white', linewidth=1.6) +
+      ggplot2::coord_equal() +
+      ggplot2::scale_fill_manual(values = c('#31708f', '#A6D6F6')) +
+      ggplot2::labs(y=NULL,
+                    x="Each square represents one survey respondent. Dark blue squares represent survey respondents that expressed an interest in this initiative.") +
+                    # x="Each square represents one survey respondent. <span style='color:#31708f;'>Dark blue squares</span> represent survey respondents that expressed an interest in this initiative.") +
+      ggplot2::theme_void() +
+      ggplot2::theme(legend.position = 'none',
+                     axis.title.x = ggplot2::element_text(size=18, color="grey50"))
+
+  })
 
   # Alcohol value box
   output$alcoholBox <- shinydashboard::renderValueBox({
@@ -286,7 +355,7 @@ app_server <- function(input, output, session) {
     n3 <- menuData$none[menuData$id==rv$item]
     N = n1 + n2 + n3
     title <- HTML(paste0(h3(
-      span(style="color: #00A65A", n1)," out of ", N, " evaluations suppoted this initiative"
+      span(style="color: #00A65A", n1)," out of ", N, " evaluations supported this initiative"
       )))
   })
 
@@ -312,7 +381,7 @@ app_server <- function(input, output, session) {
             panel.background = ggplot2::element_rect(fill='white'),
             axis.text = ggplot2::element_blank(),
             axis.ticks = ggplot2::element_blank(),
-            legend.text = ggplot2::element_text(size=16)
+            legend.text = ggplot2::element_text(size=20)
       )
 
   })

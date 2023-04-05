@@ -1,9 +1,9 @@
 ﻿id,groupA,groupB,brief,name,reco,alcohol,tobacco,cannabis,other,alcoholUse,alcoholBehav,alcoholHarm,tobaccoUse,tobaccoBehav,tobaccoQuit,cannabisUse,cannabisBehav,support,mixed,none
-A,mobilisation,?,Community events focussed on health promotion,Community events focussed on health promotion including recreational activities and health challenges,3,3,4,2,2,3,5,3,4,3,2,2,2,13,28,13
-B,mobilisation,,Sporting groups and participation,Sporting groups and participation,3,5,1,1,2,3,5,2,1,0,0,1,0,1,2,1
-C,mobilisation,,After-school activities and groups for youths,"After-school activities and groups for youths, run by peers/advocates",8,5,4,1,3,3,1,5,4,4,3,1,0,4,5,2
-D,coalition,,Community coalitions,Increase connections within and across community organizations and respected members such as the Council of Elders,3,4,3,3,2,4,3,4,3,2,3,3,1,11,32,11
-E,coalition,,Monitoring and feedback,Long-term monitoring and feedback of substance use ,0,5,0,1,1,4,5,4,0,0,0,1,0,2,5,0
+A,Mobilisation,?,Community events focussed on health promotion,Community events focussed on health promotion including recreational activities and health challenges,3,3,4,2,2,3,5,3,4,3,2,2,2,13,28,13
+B,Mobilisation,,Sporting groups and participation,Sporting groups and participation,3,5,1,1,2,3,5,2,1,0,0,1,0,1,2,1
+C,Mobilisation,,After-school activities and groups for youths,"After-school activities and groups for youths, run by peers/advocates",8,5,4,1,3,3,1,5,4,4,3,1,0,4,5,2
+D,Coalition,,Community coalitions,Increase connections within and across community organizations and respected members such as the Council of Elders,3,4,3,3,2,4,3,4,3,2,3,3,1,11,32,11
+E,Coalition,,Monitoring and feedback,Long-term monitoring and feedback of substance use ,0,5,0,1,1,4,5,4,0,0,0,1,0,2,5,0
 F,Point-of-sale,,RSA training,Responsible serving of alcohol training,1,4,3,2,1,4,3,4,3,3,1,2,0,7,18,8
 G,Point-of-sale,,Consumer awareness training,Improved identification and communication of problematic drinking customers and response strategy,2,3,4,3,1,3,3,2,4,2,0,3,1,3,8,4
 H,Point-of-sale,,Store policy,Formalising or clarifying alcohol/tobacco sale policy,2,4,5,5,0,3,3,4,4,5,1,5,1,8,18,10

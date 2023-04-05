@@ -12,8 +12,11 @@ Imports:
     shiny (>= 1.7.4),
     waffle (>= 0.7.0),
     tidyr (>= 1.2.1),
+    DT (>= 0.27),
+    bsplus (>= 0.1.4),
     shinydashboard (>= 0.7.2),
     shinyWidgets (>= 0.7.6),
+    shinyalert (>= 3.0.0),
     magrittr,
     pkgload
 Encoding: UTF-8
