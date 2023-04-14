@@ -91,7 +91,11 @@ app_ui <- function(request) {
                                    content = shiny::tagList(
                                      actionButton('AF', 'Workplace eduction', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
                                      actionButton('AG', 'Workplace policy', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb"))
-                                   ))
+                                   )),
+               div(class="puzzle",
+                   "This interactive visualisation was created by Dr Mark Hanly, UNSW Sydney ",
+                   tags$a(href="mailto:m.hanly@unsw.edu.au", icon("envelope"))
+                     )
 
                   ) # Closes tagList
                ), # Closes column
@@ -101,7 +105,7 @@ app_ui <- function(request) {
             tabPanel("Dashboard",
                tags$div(style="display: block; background-color: white; text-align: left; position: -webkit-sticky; position: sticky; top: 0; z-index:1;",
                 tagList(
-                  tags$div(style="display: block; height: 80px;",
+                  tags$div(style="display: block; height: 60px;",
                     htmlOutput("text"),
                   ),
                   hr(),
@@ -121,6 +125,7 @@ app_ui <- function(request) {
                   ),
                tags$div(style="z-index:1;",
                fluidRow(
+                 h3(HTML(paste(icon("puzzle-piece", class="puzzle"), "Potential impact (from previous studies)"))),
                column(width=3,
                 shinydashboard::valueBoxOutput("alcoholBox", width=NULL),
                  htmlOutput("alcoholSummary")
@@ -137,16 +142,18 @@ app_ui <- function(request) {
                       shinydashboard::valueBoxOutput("otherBox", width=NULL),
                       htmlOutput("otherSummary")
                )),
-               hr(),
-
-               h2("Community survey recommendations"),
-               htmlOutput("waffleTitle"),
-               plotOutput("waffle", height = "200px"),
 
                hr(),
-               h2("Previous community-wide studies"),
+               h3(HTML(paste(icon("puzzle-piece", class="puzzle"), "Previous community-wide studies"))),
                htmlOutput("studiesTitle"),
-               plotOutput("studiesPlot")
+               plotOutput("studiesPlot", height = "100px"),
+
+               hr(),
+               h3(HTML(paste(icon("puzzle-piece", class="puzzle"), "Community survey recommendations"))),
+               htmlOutput("waffleTitle"),
+               plotOutput("waffle", height = "200px")
+
+
 
                ) # Closes div
             ), # Closes Dashbard tabPanel

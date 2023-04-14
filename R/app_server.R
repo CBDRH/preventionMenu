@@ -36,6 +36,8 @@ app_server <- function(input, output, session) {
   myColors <- c('#00A65A', '#ff851b', '#DD4B39')
   names(myColors) <- c('support', 'mixed', 'none')
 
+  myPeople <- c('#31708f', '#A6D6F6')
+  names(myPeople) <- c('Yes', 'No')
 
   # Set up reactive value to track currently selected intervention
   rv <- reactiveValues(item='A')
@@ -155,7 +157,7 @@ app_server <- function(input, output, session) {
   # Title
   output$waffleTitle <- renderUI({
     n <- menuData$reco[menuData$id==rv$item]
-    title <- HTML(paste0(h3(span(style="color: #05668D", n)," out of 71 respondents", span(style="color: #05668D", "expressed interest"), "in this initiative")))
+    title <- HTML(paste0(h4(span(style="color: #05668D", n)," out of 71 respondents", span(style="color: #05668D", "expressed interest"), "in this initiative")))
   })
 
   # Plot
@@ -165,13 +167,13 @@ app_server <- function(input, output, session) {
     df <- data.frame(
       x = c(seq(1,24), seq(1,24), seq(1,23)),
       y = c(rep(1,24), rep(2,24), rep(3,23)),
-      interest = c(rep('a', n), rep('b',71-n))
+      interest = c(rep('Yes', n), rep('No',71-n))
     )
 
     ggplot2::ggplot(df, ggplot2::aes(x, y, fill=interest, color=interest)) +
       ggplot2::geom_tile(color='white', linewidth=1.6) +
       ggplot2::coord_equal() +
-      ggplot2::scale_fill_manual(values = c('#31708f', '#A6D6F6')) +
+      ggplot2::scale_fill_manual(values = myPeople) +
       ggplot2::labs(y=NULL,
                     x="Each square represents one survey respondent. Dark blue squares represent survey respondents that expressed an interest in this initiative.") +
                     # x="Each square represents one survey respondent. <span style='color:#31708f;'>Dark blue squares</span> represent survey respondents that expressed an interest in this initiative.") +
@@ -354,7 +356,7 @@ app_server <- function(input, output, session) {
     n2 <- menuData$mixed[menuData$id==rv$item]
     n3 <- menuData$none[menuData$id==rv$item]
     N = n1 + n2 + n3
-    title <- HTML(paste0(h3(
+    title <- HTML(paste0(h4(
       span(style="color: #00A65A", n1)," out of ", N, " evaluations supported this initiative"
       )))
   })
