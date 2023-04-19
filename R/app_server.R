@@ -8,9 +8,6 @@ app_server <- function(input, output, session) {
 
   rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Possible', 'Likely')
 
-  # Load data
-  load("data/menuData.rda")
-
   # Define colors
   colors <- data.frame(ranking = rankings,
                        shade = c('teal', 'red', 'red', 'orange', 'lime', 'green'))
