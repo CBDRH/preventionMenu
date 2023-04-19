@@ -1,7 +1,6 @@
-# Set up the data
-
+## Setting up the data
 rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Possible', 'Likely')
-
+library(dplyr)
 menuData <- read.csv("data-raw/menu-data.csv") %>%
   dplyr::mutate(
     alcohol = factor(alcohol, levels=0:5, labels=rankings),
@@ -18,4 +17,4 @@ menuData <- read.csv("data-raw/menu-data.csv") %>%
     cannabisBehav = factor(cannabisBehav, levels=0:5, labels=rankings)
   )
 
-usethis::use_data(menuData)
+usethis::use_data(menuData, overwrite = TRUE)
