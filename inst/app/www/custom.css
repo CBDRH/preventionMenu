@@ -66,6 +66,10 @@ max-height: 70px;
   margin-left: 2%;
 }
 
+.summaryText:hover {
+  background-color: #f4f4f4;
+}
+
 .Likely {
   color: #00A65A;
   float: right;
