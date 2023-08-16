@@ -184,32 +184,55 @@ app_server <- function(input, output, session) {
 
     useRank = menuData$alcoholUse[menuData$id==rv$item]
 
+    useTitle = dplyr::case_when(
+      useRank=='Likely' ~ 'Likely',
+      useRank=='Possible' ~ 'Possible',
+      useRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
       useRank=='Possible' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ 'xmark'
     )
 
     harmRank = menuData$alcoholHarm[menuData$id==rv$item]
+
+    harmTitle = dplyr::case_when(
+      harmRank=='Likely' ~ 'Likely',
+      harmRank=='Possible' ~ 'Possible',
+      harmRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     harmIcon = dplyr::case_when(
       harmRank=='Likely' ~ 'check-double',
       harmRank=='Possible' ~ 'check',
-      useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      harmRank=='Potential' ~ 'circle-question',
+      TRUE ~ 'xmark'
     )
 
     behavRank = menuData$alcoholBehav[menuData$id==rv$item]
+
+    behavTitle = dplyr::case_when(
+      behavRank=='Likely' ~ 'Likely',
+      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
       behavRank=='Possible' ~ 'check',
-      useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      behavRank=='Potential' ~ 'circle-question',
+      TRUE ~ 'xmark'
     )
 
-    HTML(paste(tags$div(class=useRank, icon("wine-bottle"), "Use", icon(useIcon)),
-               tags$div(class=harmRank, icon("person-falling"), "Related Harm", icon(harmIcon)),
-               tags$div(class=behavRank, icon("person-praying"), "Behavioural", icon(behavIcon))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("wine-bottle"), "Use", span(class=useRank, icon(useIcon))),
+               tags$div(title=harmTitle, class="summaryText", icon("person-falling"), "Related Harm", span(class=harmRank, icon(harmIcon))),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
                ))
   })
 
@@ -231,32 +254,55 @@ app_server <- function(input, output, session) {
 
     useRank = menuData$tobaccoUse[menuData$id==rv$item]
 
+    useTitle = dplyr::case_when(
+      useRank=='Likely' ~ 'Likely',
+      useRank=='Possible' ~ 'Possible',
+      useRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
       useRank=='Possible' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
     behavRank = menuData$tobaccoBehav[menuData$id==rv$item]
+
+    behavTitle = dplyr::case_when(
+      behavRank=='Likely' ~ 'Likely',
+      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
       behavRank=='Possible' ~ 'check',
       behavRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
     quitRank = menuData$tobaccoQuit[menuData$id==rv$item]
+
+    quitTitle = dplyr::case_when(
+      quitRank=='Likely' ~ 'Likely',
+      quitRank=='Possible' ~ 'Possible',
+      quitRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     quitIcon = dplyr::case_when(
       quitRank=='Likely' ~ 'check-double',
       quitRank=='Possible' ~ 'check',
       quitRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(class=useRank, icon("smoking"), "Use", icon(useIcon)),
-               tags$div(class=quitRank, icon("ban-smoking"), "Quitting", icon(quitIcon)),
-               tags$div(class=behavRank, icon("person-praying"), "Behavioural", icon(behavIcon))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("smoking"), "Use", span(class=useRank, icon(useIcon))),
+               tags$div(title=quitTitle, class="summaryText", icon("ban-smoking"), "Quitting", span(class=quitRank, icon(quitIcon))),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
     ))
   })
 
@@ -280,23 +326,38 @@ app_server <- function(input, output, session) {
 
     useRank = menuData$cannabisUse[menuData$id==rv$item]
 
+    useTitle = dplyr::case_when(
+      useRank=='Likely' ~ 'Likely',
+      useRank=='Possible' ~ 'Possible',
+      useRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
       useRank=='Possible' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
     behavRank = menuData$cannabisBehav[menuData$id==rv$item]
+
+    behavTitle = dplyr::case_when(
+      behavRank=='Likely' ~ 'Likely',
+      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
       behavRank=='Possible' ~ 'check',
       behavRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(class=useRank, icon("cannabis"), "Use", icon(useIcon)),
-               tags$div(class=behavRank, icon("person-praying"), "Behavioural", icon(behavIcon))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("cannabis"), "Use", span(class=useRank, icon(useIcon))),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
     ))
   })
 
@@ -319,14 +380,21 @@ app_server <- function(input, output, session) {
 
     useRank = menuData$other[menuData$id==rv$item]
 
+    useTitle = dplyr::case_when(
+      useRank=='Likely' ~ 'Likely',
+      useRank=='Possible' ~ 'Possible',
+      useRank=='Potential' ~ 'Potential',
+      TRUE ~ 'Limited/\nUnlikely'
+    )
+
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
       useRank=='Possible' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
-      TRUE ~ ""
+      TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(class=useRank, icon("pills"), "Use", icon(useIcon))))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("pills"), "Use", span(class=useRank, icon(useIcon)))))
   })
 
 

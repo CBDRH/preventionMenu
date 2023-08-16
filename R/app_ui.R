@@ -43,8 +43,7 @@ app_ui <- function(request) {
                  bsplus::bs_append(title = shiny::HTML(paste(shiny::icon("legal"), "Legislation and Policy")),
                                    content = shiny::tagList(
                                      actionButton('I', 'Bans and restrictions', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
-                                     actionButton('J', 'Location bans', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
-                                     actionButton('K', 'Council revenue', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb"))
+                                     actionButton('J', 'Location bans', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb"))
                                    )) %>%
                  bsplus::bs_append(title = shiny::HTML(paste(shiny::icon("building-columns"), "Infrastructure")),
                                    content = shiny::tagList(
@@ -75,9 +74,6 @@ app_ui <- function(request) {
                                    )) %>%
                  bsplus::bs_append(title = shiny::HTML(paste(shiny::icon("user-doctor"), "Health workers")),
                                    content = shiny::tagList(
-                                     actionButton('X', 'Lived experience staff', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
-                                     actionButton('Y', 'Public relations', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
-                                     actionButton('Z', 'More counsellors', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
                                      actionButton('AA', 'Dedicated treatments', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
                                      actionButton('AB', 'Remote service', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb")),
                                      actionButton('AC', 'Upskilling', width='32%', class="myButton", icon = icon("lightbulb", class="myLightbulb"))
@@ -147,12 +143,8 @@ app_ui <- function(request) {
                h3(HTML(paste(icon("puzzle-piece", class="puzzle"), "Previous community-wide studies"))),
                htmlOutput("studiesTitle"),
                plotOutput("studiesPlot", height = "100px"),
-
-               hr(),
-               h3(HTML(paste(icon("puzzle-piece", class="puzzle"), "Community survey recommendations"))),
-               htmlOutput("waffleTitle"),
-               plotOutput("waffle", height = "200px")
-
+               br(),
+               hr()
 
 
                ) # Closes div

@@ -6,7 +6,7 @@
 \usage{
 run_app(
   onStart = NULL,
-  options = list(),
+  options = list(shiny.launch.browser = .rs.invokeShinyWindowExternal),
   enableBookmarking = NULL,
   uiPattern = "/",
   ...

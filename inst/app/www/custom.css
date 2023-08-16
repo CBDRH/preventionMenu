@@ -61,32 +61,43 @@ max-height: 70px;
 
 #panel2 {overflow: auto;}
 
+.summaryText {
+  color: #333;
+  margin-left: 2%;
+}
+
 .Likely {
   color: #00A65A;
-  margin-left: 10%;
+  float: right;
+  margin-right: 45%;
 }
 
 .Possible {
   color: #03ff70;
-  margin-left: 10%
+  float: right;
+  margin-right: 45%;
 }
 
 .Potential {
   color: #ff851b;
-  margin-left: 10%
+  float: right;
+  margin-right: 45%;
 }
 
 .Limited {
-  color: #D3D3D3;
-  margin-left: 10%
+  color: #DD4B39;
+  float: right;
+  margin-right: 45%;
 }
 
 .Unlikely {
-  color: #D3D3D3;
-  margin-left: 10%
+  color: #DD4B39;
+  float: right;
+  margin-right: 45%;
 }
 
 .Unknown {
-  color: #D3D3D3;
-  margin-left: 10%
+  color: #DD4B39;
+  float: right;
+  margin-right: 45%;
 }

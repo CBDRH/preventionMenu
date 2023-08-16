@@ -1,34 +1,33 @@
-﻿id,groupA,groupB,brief,name,reco,alcohol,tobacco,cannabis,other,alcoholUse,alcoholBehav,alcoholHarm,tobaccoUse,tobaccoBehav,tobaccoQuit,cannabisUse,cannabisBehav,support,mixed,none
-A,Mobilisation,?,Community events focussed on health promotion,Community events focussed on health promotion including recreational activities and health challenges,3,3,4,2,2,3,5,3,4,3,2,2,2,13,28,13
-B,Mobilisation,,Sporting groups and participation,Sporting groups and participation,3,5,1,1,2,3,5,2,1,0,0,1,0,1,2,1
-C,Mobilisation,,After-school activities and groups for youths,"After-school activities and groups for youths, run by peers/advocates",8,5,4,1,3,3,1,5,4,4,3,1,0,4,5,2
-D,Coalition,,Community coalitions,Increase connections within and across community organizations and respected members such as the Council of Elders,3,4,3,3,2,4,3,4,3,2,3,3,1,11,32,11
-E,Coalition,,Monitoring and feedback,Long-term monitoring and feedback of substance use ,0,5,0,1,1,4,5,4,0,0,0,1,0,2,5,0
-F,Point-of-sale,,RSA training,Responsible serving of alcohol training,1,4,3,2,1,4,3,4,3,3,1,2,0,7,18,8
-G,Point-of-sale,,Consumer awareness training,Improved identification and communication of problematic drinking customers and response strategy,2,3,4,3,1,3,3,2,4,2,0,3,1,3,8,4
-H,Point-of-sale,,Store policy,Formalising or clarifying alcohol/tobacco sale policy,2,4,5,5,0,3,3,4,4,5,1,5,1,8,18,10
-I,Legislation and policy,,Bans and restrictions,License restrictions such as time-based curfews or restrictions on amount sold,1,3,2,0,0,2,3,3,2,0,0,0,0,4,4,4
-J,Legislation and policy,,Location bans,Limiting purchasing locations (reducing availability or total ban in identified hotspots),1,5,2,0,0,3,5,2,2,2,1,0,0,1,4,2
-K,Legislation and policy,,Council revenue,Disconnecting Council from sales revenue,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-L,Infrastructure,,Specialised services,"Establishing a specialised AoD service (Counselling, rehab, Alcoholics Anonymous)",10,5,5,1,2,5,5,0,5,2,3,1,1,0,7,5
-M,Infrastructure,,Safety audit,Safety and security audits with the intentions to identify risks and initiating a response ,1,5,5,1,0,5,5,3,3,5,1,1,1,1,6,6
-N,Infrastructure,,Public transport,"Public transport options (additional taxi, lit walking paths)",2,2,0,0,0,1,2,2,0,0,0,0,0,0,1,0
-O,Education,,School education,"School education program, targeting social perception of drug use, long-term effects of drug use and other components",25,3,4,3,3,3,3,3,4,3,2,3,1,7,19,10
-P,Education,,Community education,"Community education on the impact of Alcohol and other drug use, parental supply, and recognition of the problem. Ideally led by Council of Elders",15,5,2,2,2,4,5,5,2,2,1,1,2,6,7,7
-Q,Law enforcement,,Random Breath Testing,Random Breath Testing (targeting alcohol and drug use) at roadside and workplace testing (especially heavy equipment work),5,5,0,0,0,4,2,5,0,0,0,0,0,2,3,0
-R,Law enforcement,,Police presence,"Greater police presence in the community (spot checks, regular routes, sporting clubs, and police involvement in public education)",4,4,1,0,0,3,2,4,1,1,0,0,0,7,10,5
-S,Law enforcement,,Punishment,Increase in the enforcement of law (less warnings) and harsher drug-related crime consequences (jail term),7,5,0,1,1,4,3,5,0,0,0,1,0,2,2,0
-T,Law enforcement,,Reducing importation,Greater focus on reducing drug importation,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-U,Mass-Media,,Project awareness,Media campaigns describing the project and project goals,2,4,4,5,0,3,3,4,4,3,4,5,0,14,18,11
-V,Mass-Media,,Targeted messages,"Culturally relevant local media advertisements on impact of alcohol and other drug use, led by individuals with lived experience",2,3,5,2,0,3,3,3,1,0,5,2,0,1,4,1
-W,Price increase,,Purchasing tax,Tax increases on alcoholic drinks and/or cigarettes,8,2,0,0,0,2,0,2,0,0,0,0,0,1,0,0
-X,Health workers,,Lived experience staff,Employ individuals with lived experience into healthcare or education roles,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Y,Health workers,,Public relations,Increase public relations with services – targeting stigma,8,2,2,1,0,2,2,0,2,2,0,1,1,0,1,0
-Z,Health workers,,More counsellors,Employ additional counsellors (males),1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-AA,Health workers,,Dedicated treatments,Health workers and treatment locations dedicated to alcohol or other drug use,10,5,5,4,2,4,5,0,5,2,3,4,2,3,7,3
-AB,Health workers,,Remote service,Free remote alcohol and other drug counselling (telephone/web/apps) and/or confidential treatment options ,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-AC,Health workers,,Upskilling,Upskilling health workers to increase alcohol and other drug knowledge,1,5,5,2,2,5,4,3,5,5,5,2,1,5,13,4
-AD,Families,,Parent/student focus,Involving parents in school alcohol and other drug education (eg Strengthening Families Program),1,5,4,3,2,4,4,5,4,2,4,2,3,8,11,12
-AE,Families,,Parent education,Educating parents on issues with parental supply and taking responsibility for child’s substance use,5,5,1,1,0,5,5,5,1,1,1,1,0,1,4,2
-AF,Workplace,,Workplace eduction,Workplace presentations and education sessions targeting work safety,1,3,0,0,0,2,0,3,0,0,0,0,0,1,1,0
-AG,Workplace,,Workplace policy,Workplace policies and abstinence incentives (enforcing or encouraging no alcohol or drug use at work),1,2,5,1,2,2,1,1,4,1,5,1,0,0,5,3
+﻿id,groupA,brief,name,alcohol,tobacco,cannabis,other,alcoholUse,alcoholBehav,alcoholHarm,tobaccoUse,tobaccoBehav,tobaccoQuit,cannabisUse,cannabisBehav,support,mixed,none,norfolk
+A,Mobilisation,Community events focussed on health promotion,Community events focussed on health promotion including recreational activities and health challenges,4,2,1,1,4,4,4,2,3,2,2,2,11,28,15,0
+B,Mobilisation,Sporting groups and participation,Sporting groups and participation,5,1,1,2,5,2,2,1,0,0,1,0,2,3,1,0
+C,Mobilisation,After-school activities and groups for youths,"After-school activities and groups for youths, run by peers/advocates",5,3,1,3,5,2,5,4,5,2,1,0,7,15,7,0
+D,Coalition,Community coalitions,Increase connections within and across community organizations and respected members such as the Council of Elders,5,4,3,2,4,3,5,3,3,5,4,2,5,47,12,0
+E,Coalition,Monitoring and feedback,Long-term monitoring and feedback of substance use ,5,2,3,1,5,3,5,2,2,2,3,1,0,11,0,0
+F,Point-of-sale,RSA training,Responsible serving of alcohol training,5,2,1,1,5,4,5,2,4,5,1,2,7,21,9,0
+G,Point-of-sale,Consumer awareness training,Improved identification and communication of problematic drinking customers and response strategy,4,4,2,1,4,1,5,4,3,2,3,2,2,11,4,0
+H,Point-of-sale,Store policy,Formalising or clarifying alcohol/tobacco sale policy,4,2,4,0,4,2,5,2,5,2,2,2,4,27,9,0
+I,Legislation and policy,Bans and restrictions,License restrictions such as time-based curfews or restrictions on amount sold,4,4,1,2,2,1,5,4,3,2,1,2,4,12,6,0
+J,Legislation and policy,Location bans,Limiting purchasing locations (reducing availability or total ban in identified hotspots),5,3,0,0,3,3,5,3,3,2,0,0,1,11,2,0
+K,Legislation and policy,Council revenue,Disconnecting Council from sales revenue,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+M,Infrastructure,Safety audit,Safety and security audits with the intentions to identify risks and initiating a response ,5,2,2,2,5,5,2,2,3,1,2,2,2,10,6,0
+N,Infrastructure,Public transport,"Public transport options (additional taxi, lit walking paths)",2,0,0,0,2,0,0,0,0,0,0,0,0,1,0,0
+O,Education,School education,"School education program, targeting social perception of drug use, long-term effects of drug use and other components",4,3,2,3,4,2,5,3,3,2,3,1,6,23,14,0
+P,Education,Community education,"Community education on the impact of Alcohol and other drug use, parental supply, and recognition of the problem. Ideally led by Council of Elders",5,2,1,1,5,5,5,2,3,2,1,3,10,24,10,0
+Q,Law enforcement,Random Breath Testing,Random Breath Testing (targeting alcohol and drug use) at roadside and workplace testing (especially heavy equipment work),5,0,0,0,4,3,5,0,0,0,0,0,2,6,0,0
+R,Law enforcement,Police presence,"Greater police presence in the community (spot checks, regular routes, sporting clubs, and police involvement in public education)",4,2,0,0,3,1,4,2,2,0,0,0,5,14,5,0
+S,Law enforcement,Punishment,Increase in the enforcement of law (less warnings) and harsher drug-related crime consequences (jail term),5,2,2,2,4,4,5,2,2,2,2,0,0,7,0,0
+T,Law enforcement,Reducing importation,Greater focus on reducing drug importation,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+U,Mass-Media,Project awareness,Media campaigns describing the project and project goals,4,4,5,2,4,4,5,3,3,4,5,0,13,26,14,0
+V,Mass-Media,Targeted messages,"Culturally relevant local media advertisements on impact of alcohol and other drug use, led by individuals with lived experience",5,4,2,0,3,2,5,3,3,4,2,0,3,20,4,0
+W,Price increase,Purchasing tax,Tax increases on alcoholic drinks and/or cigarettes,5,2,0,0,3,0,5,2,0,0,0,0,2,1,0,0
+X,Health workers,Lived experience staff,Employ individuals with lived experience into healthcare or education roles,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Y,Health workers,Public relations,Increase public relations with services – targeting stigma,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Z,Health workers,More counsellors,Employ additional counsellors (males),0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+AA,Health workers,Dedicated treatments,Health workers and treatment locations dedicated to alcohol or other drug use,5,5,1,2,4,5,5,5,3,3,2,2,2,16,4,0
+AB,Health workers,Remote service,Free remote alcohol and other drug counselling (telephone/web/apps) and/or confidential treatment options ,2,4,1,0,2,0,0,5,2,2,2,2,0,6,0,0
+AC,Health workers,Upskilling,Upskilling health workers to increase alcohol and other drug knowledge,4,5,2,3,4,5,2,5,3,2,2,2,3,17,5,0
+AD,Families,Parent/student focus,Involving parents in school alcohol and other drug education (eg Strengthening Families Program),5,3,2,2,5,2,5,3,2,4,2,2,8,25,13,0
+AE,Families,Parent education,Educating parents on issues with parental supply and taking responsibility for child’s substance use,5,2,4,2,5,4,4,2,2,2,4,0,1,12,3,0
+AF,Workplace,Workplace eduction,Workplace presentations and education sessions targeting work safety,3,2,0,0,3,0,2,2,2,2,0,0,1,2,0,0
+AG,Workplace,Workplace policy,Workplace policies and abstinence incentives (enforcing or encouraging no alcohol or drug use at work),1,5,2,2,2,2,1,4,2,5,2,0,0,7,3,0
