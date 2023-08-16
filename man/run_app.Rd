@@ -4,24 +4,12 @@
 \alias{run_app}
 \title{Run the Shiny Application}
 \usage{
-run_app(
-  onStart = NULL,
-  options = list(shiny.launch.browser = .rs.invokeShinyWindowExternal),
-  enableBookmarking = NULL,
-  uiPattern = "/",
-  ...
-)
+run_app(onStart = NULL, enableBookmarking = NULL, uiPattern = "/", ...)
 }
 \arguments{
 \item{onStart}{A function that will be called before the app is actually run.
 This is only needed for \code{shinyAppObj}, since in the \code{shinyAppDir}
 case, a \code{global.R} file can be used for this purpose.}
-
-\item{options}{Named options that should be passed to the \code{runApp} call
-(these can be any of the following: "port", "launch.browser", "host", "quiet",
-"display.mode" and "test.mode"). You can also specify \code{width} and
-\code{height} parameters which provide a hint to the embedding environment
-about the ideal height/width for the app.}
 
 \item{enableBookmarking}{Can be one of \code{"url"}, \code{"server"}, or
 \code{"disable"}. The default value, \code{NULL}, will respect the setting from

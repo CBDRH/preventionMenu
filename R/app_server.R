@@ -97,7 +97,7 @@ app_server <- function(input, output, session) {
   # Define summary
   summary <- reactive({
     menuData[shortList()$id[shortList()$include==1], ] %>%
-      dplyr::select(groupA, brief, support, reco)
+      dplyr::select(groupA, brief, support)
   })
 
 
@@ -134,36 +134,36 @@ app_server <- function(input, output, session) {
   })
 
 
-  # Waffle plot
-
-  # Title
-  output$waffleTitle <- renderUI({
-    n <- menuData$reco[menuData$id==rv$item]
-    title <- HTML(paste0(h4(span(style="color: #05668D", n)," out of 71 respondents", span(style="color: #05668D", "expressed interest"), "in this initiative")))
-  })
-
-  # Plot
-  output$waffle <- renderPlot({
-    n <- menuData$reco[menuData$id==rv$item]
-
-    df <- data.frame(
-      x = c(seq(1,24), seq(1,24), seq(1,23)),
-      y = c(rep(1,24), rep(2,24), rep(3,23)),
-      interest = c(rep('Yes', n), rep('No',71-n))
-    )
-
-    ggplot2::ggplot(df, ggplot2::aes(x, y, fill=interest, color=interest)) +
-      ggplot2::geom_tile(color='white', linewidth=1.6) +
-      ggplot2::coord_equal() +
-      ggplot2::scale_fill_manual(values = myPeople) +
-      ggplot2::labs(y=NULL,
-                    x="Each square represents one survey respondent. Dark blue squares represent survey respondents that expressed an interest in this initiative.") +
-                    # x="Each square represents one survey respondent. <span style='color:#31708f;'>Dark blue squares</span> represent survey respondents that expressed an interest in this initiative.") +
-      ggplot2::theme_void() +
-      ggplot2::theme(legend.position = 'none',
-                     axis.title.x = ggplot2::element_text(size=18, color="grey50"))
-
-  })
+  # # Waffle plot
+  #
+  # # Title
+  # output$waffleTitle <- renderUI({
+  #   n <- menuData$reco[menuData$id==rv$item]
+  #   title <- HTML(paste0(h4(span(style="color: #05668D", n)," out of 71 respondents", span(style="color: #05668D", "expressed interest"), "in this initiative")))
+  # })
+  #
+  # # Plot
+  # output$waffle <- renderPlot({
+  #   n <- menuData$reco[menuData$id==rv$item]
+  #
+  #   df <- data.frame(
+  #     x = c(seq(1,24), seq(1,24), seq(1,23)),
+  #     y = c(rep(1,24), rep(2,24), rep(3,23)),
+  #     interest = c(rep('Yes', n), rep('No',71-n))
+  #   )
+  #
+  #   ggplot2::ggplot(df, ggplot2::aes(x, y, fill=interest, color=interest)) +
+  #     ggplot2::geom_tile(color='white', linewidth=1.6) +
+  #     ggplot2::coord_equal() +
+  #     ggplot2::scale_fill_manual(values = myPeople) +
+  #     ggplot2::labs(y=NULL,
+  #                   x="Each square represents one survey respondent. Dark blue squares represent survey respondents that expressed an interest in this initiative.") +
+  #                   # x="Each square represents one survey respondent. <span style='color:#31708f;'>Dark blue squares</span> represent survey respondents that expressed an interest in this initiative.") +
+  #     ggplot2::theme_void() +
+  #     ggplot2::theme(legend.position = 'none',
+  #                    axis.title.x = ggplot2::element_text(size=18, color="grey50"))
+  #
+  # })
 
   # Alcohol value box
   output$alcoholBox <- shinydashboard::renderValueBox({

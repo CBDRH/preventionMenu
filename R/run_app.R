@@ -9,7 +9,7 @@
 #' @importFrom golem with_golem_options
 run_app <- function(
   onStart = NULL,
-  options = list(shiny.launch.browser = .rs.invokeShinyWindowExternal),
+  #options = list(shiny.launch.browser = .rs.invokeShinyWindowExternal),
   enableBookmarking = NULL,
   uiPattern = "/",
   ...
