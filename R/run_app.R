@@ -19,7 +19,7 @@ run_app <- function(
       ui = app_ui,
       server = app_server,
       onStart = onStart,
-      options = options(shiny.launch.browser = .rs.invokeShinyWindowExternal),
+      #options = options(shiny.launch.browser = .rs.invokeShinyWindowExternal),
       enableBookmarking = enableBookmarking,
       uiPattern = uiPattern
     ),
