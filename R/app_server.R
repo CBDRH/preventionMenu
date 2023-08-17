@@ -97,7 +97,8 @@ app_server <- function(input, output, session) {
   # Define summary
   summary <- reactive({
     menuData[shortList()$id[shortList()$include==1], ] %>%
-      dplyr::select(groupA, brief, support, mixed, none)
+      dplyr::mutate(total = support + mixed + none) %>%
+      dplyr::select(groupA, brief, support, mixed, none, total)
   })
 
 
@@ -105,7 +106,8 @@ app_server <- function(input, output, session) {
   output$table <- DT::renderDataTable({
     DT::datatable(
       summary(),
-      colnames = c('Type', 'Description', 'Community support', 'Positive evaluations', 'Mixed evaluations', 'No Impact')
+      colnames = c('Category', 'Description', 'Positive evaluations', 'Mixed evaluations', 'No Impact', 'Total'),
+      rownames = FALSE
     )
   })
 
