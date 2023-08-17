@@ -6,7 +6,7 @@
 #' @noRd
 app_server <- function(input, output, session) {
 
-  rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Possible', 'Likely')
+  rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Probable', 'Likely')
 
   # Define colors
   colors <- data.frame(ranking = rankings,
@@ -97,7 +97,7 @@ app_server <- function(input, output, session) {
   # Define summary
   summary <- reactive({
     menuData[shortList()$id[shortList()$include==1], ] %>%
-      dplyr::select(groupA, brief, support)
+      dplyr::select(groupA, brief, support, mixed, none)
   })
 
 
@@ -105,7 +105,7 @@ app_server <- function(input, output, session) {
   output$table <- DT::renderDataTable({
     DT::datatable(
       summary(),
-      colnames = c('Type', 'Description', 'Community support', 'Positive evaluations')
+      colnames = c('Type', 'Description', 'Community support', 'Positive evaluations', 'Mixed evaluations', 'No Impact')
     )
   })
 
@@ -186,14 +186,14 @@ app_server <- function(input, output, session) {
 
     useTitle = dplyr::case_when(
       useRank=='Likely' ~ 'Likely',
-      useRank=='Possible' ~ 'Possible',
+      useRank=='Probable' ~ 'Probable',
       useRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely\nUnknown'
     )
 
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
-      useRank=='Possible' ~ 'check',
+      useRank=='Probable' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
       TRUE ~ 'xmark'
     )
@@ -202,14 +202,14 @@ app_server <- function(input, output, session) {
 
     harmTitle = dplyr::case_when(
       harmRank=='Likely' ~ 'Likely',
-      harmRank=='Possible' ~ 'Possible',
+      harmRank=='Probable' ~ 'Probable',
       harmRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     harmIcon = dplyr::case_when(
       harmRank=='Likely' ~ 'check-double',
-      harmRank=='Possible' ~ 'check',
+      harmRank=='Probable' ~ 'check',
       harmRank=='Potential' ~ 'circle-question',
       TRUE ~ 'xmark'
     )
@@ -218,14 +218,14 @@ app_server <- function(input, output, session) {
 
     behavTitle = dplyr::case_when(
       behavRank=='Likely' ~ 'Likely',
-      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Probable' ~ 'Probable',
       behavRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
-      behavRank=='Possible' ~ 'check',
+      behavRank=='Probable' ~ 'check',
       behavRank=='Potential' ~ 'circle-question',
       TRUE ~ 'xmark'
     )
@@ -256,14 +256,14 @@ app_server <- function(input, output, session) {
 
     useTitle = dplyr::case_when(
       useRank=='Likely' ~ 'Likely',
-      useRank=='Possible' ~ 'Possible',
+      useRank=='Probable' ~ 'Probable',
       useRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
-      useRank=='Possible' ~ 'check',
+      useRank=='Probable' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -272,14 +272,14 @@ app_server <- function(input, output, session) {
 
     behavTitle = dplyr::case_when(
       behavRank=='Likely' ~ 'Likely',
-      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Probable' ~ 'Probable',
       behavRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
-      behavRank=='Possible' ~ 'check',
+      behavRank=='Probable' ~ 'check',
       behavRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -288,14 +288,14 @@ app_server <- function(input, output, session) {
 
     quitTitle = dplyr::case_when(
       quitRank=='Likely' ~ 'Likely',
-      quitRank=='Possible' ~ 'Possible',
+      quitRank=='Probable' ~ 'Probable',
       quitRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     quitIcon = dplyr::case_when(
       quitRank=='Likely' ~ 'check-double',
-      quitRank=='Possible' ~ 'check',
+      quitRank=='Probable' ~ 'check',
       quitRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -328,14 +328,14 @@ app_server <- function(input, output, session) {
 
     useTitle = dplyr::case_when(
       useRank=='Likely' ~ 'Likely',
-      useRank=='Possible' ~ 'Possible',
+      useRank=='Probable' ~ 'Probable',
       useRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
-      useRank=='Possible' ~ 'check',
+      useRank=='Probable' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -344,14 +344,14 @@ app_server <- function(input, output, session) {
 
     behavTitle = dplyr::case_when(
       behavRank=='Likely' ~ 'Likely',
-      behavRank=='Possible' ~ 'Possible',
+      behavRank=='Probable' ~ 'Probable',
       behavRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     behavIcon = dplyr::case_when(
       behavRank=='Likely' ~ 'check-double',
-      behavRank=='Possible' ~ 'check',
+      behavRank=='Probable' ~ 'check',
       behavRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -382,14 +382,14 @@ app_server <- function(input, output, session) {
 
     useTitle = dplyr::case_when(
       useRank=='Likely' ~ 'Likely',
-      useRank=='Possible' ~ 'Possible',
+      useRank=='Probable' ~ 'Probable',
       useRank=='Potential' ~ 'Potential',
       TRUE ~ 'Limited/\nUnlikely'
     )
 
     useIcon = dplyr::case_when(
       useRank=='Likely' ~ 'check-double',
-      useRank=='Possible' ~ 'check',
+      useRank=='Probable' ~ 'check',
       useRank=='Potential' ~ 'circle-question',
       TRUE ~ "xmark"
     )
@@ -405,9 +405,10 @@ app_server <- function(input, output, session) {
     n1 <- menuData$support[menuData$id==rv$item]
     n2 <- menuData$mixed[menuData$id==rv$item]
     n3 <- menuData$none[menuData$id==rv$item]
+    n4 = n1 + n2
     N = n1 + n2 + n3
     title <- HTML(paste0(h4(
-      span(style="color: #00A65A", n1)," out of ", N, " evaluations supported this initiative"
+      span(style="font-weight: bold", n4)," out of ", N, " evaluations showed some support for this initiative"
       )))
   })
 

@@ -1,5 +1,5 @@
 ## Setting up the data
-rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Possible', 'Likely')
+rankings <- c('Unknown', 'Unlikely', 'Limited', 'Potential', 'Probable', 'Likely')
 library(dplyr)
 menuData <- read.csv("data-raw/menu-data.csv") %>%
   dplyr::mutate(
