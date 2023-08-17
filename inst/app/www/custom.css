@@ -71,37 +71,37 @@ max-height: 70px;
 }
 
 .Likely {
+  display: inline;
   color: #00A65A;
-  float: right;
-  margin-right: 45%;
+  font-size: 0.8em;
 }
 
 .Possible {
+  display: inline;
   color: #03ff70;
-  float: right;
-  margin-right: 45%;
+  font-size: 0.8em;
 }
 
 .Potential {
+  display: inline;
   color: #ff851b;
-  float: right;
-  margin-right: 45%;
+  font-size: 0.8em;
 }
 
 .Limited {
+  display: inline;
   color: #DD4B39;
-  float: right;
-  margin-right: 45%;
+  font-size: 0.8em;
 }
 
 .Unlikely {
+  display: inline;
   color: #DD4B39;
-  float: right;
-  margin-right: 45%;
+  font-size: 0.8em;
 }
 
 .Unknown {
-  color: #DD4B39;
-  float: right;
-  margin-right: 45%;
+  display: inline;
+  color: #39cccc;
+  font-size: 0.8em;
 }

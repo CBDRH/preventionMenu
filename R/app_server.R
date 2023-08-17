@@ -188,7 +188,7 @@ app_server <- function(input, output, session) {
       useRank=='Likely' ~ 'Likely',
       useRank=='Possible' ~ 'Possible',
       useRank=='Potential' ~ 'Potential',
-      TRUE ~ 'Limited/\nUnlikely'
+      TRUE ~ 'Limited/\nUnlikely\nUnknown'
     )
 
     useIcon = dplyr::case_when(
@@ -230,9 +230,9 @@ app_server <- function(input, output, session) {
       TRUE ~ 'xmark'
     )
 
-    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("wine-bottle"), "Use", span(class=useRank, icon(useIcon))),
-               tags$div(title=harmTitle, class="summaryText", icon("person-falling"), "Related Harm", span(class=harmRank, icon(harmIcon))),
-               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("wine-bottle"), "Use", div(class=useRank, icon(useIcon), useRank)),
+               tags$div(title=harmTitle, class="summaryText", icon("person-falling"), "Related Harm", div(class=harmRank, icon(harmIcon), harmRank)),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", div(class=behavRank, icon(behavIcon), behavRank))
                ))
   })
 
@@ -300,9 +300,9 @@ app_server <- function(input, output, session) {
       TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("smoking"), "Use", span(class=useRank, icon(useIcon))),
-               tags$div(title=quitTitle, class="summaryText", icon("ban-smoking"), "Quitting", span(class=quitRank, icon(quitIcon))),
-               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("smoking"), "Use", div(class=useRank, icon(useIcon), useRank)),
+               tags$div(title=quitTitle, class="summaryText", icon("ban-smoking"), "Quitting", div(class=quitRank, icon(quitIcon), quitRank)),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", div(class=behavRank, icon(behavIcon), behavRank))
     ))
   })
 
@@ -356,8 +356,8 @@ app_server <- function(input, output, session) {
       TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("cannabis"), "Use", span(class=useRank, icon(useIcon))),
-               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon)))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("cannabis"), "Use", span(class=useRank, icon(useIcon), useRank)),
+               tags$div(title=behavTitle, class="summaryText", icon("person-praying"), "Behavioural", span(class=behavRank, icon(behavIcon), behavRank))
     ))
   })
 
@@ -394,7 +394,7 @@ app_server <- function(input, output, session) {
       TRUE ~ "xmark"
     )
 
-    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("pills"), "Use", span(class=useRank, icon(useIcon)))))
+    HTML(paste(tags$div(title=useTitle, class="summaryText", icon("pills"), "Use", span(class=useRank, icon(useIcon), useRank))))
   })
 
 
